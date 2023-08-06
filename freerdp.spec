@@ -30,7 +30,7 @@ Summary:        Free implementation of the Remote Desktop Protocol (RDP)
 License:        ASL 2.0
 URL:            http://www.freerdp.com/
 
-Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{version}.tar.gz
+Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{version}.zip
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
