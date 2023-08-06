@@ -23,7 +23,7 @@
 %endif
 
 Name:           freerdp
-Version:        3.0.0-beta2
+Version:        3.0.0~beta2
 Release:        1%{?dist}
 Epoch:          2
 Summary:        Free implementation of the Remote Desktop Protocol (RDP)
@@ -141,7 +141,7 @@ The %{name}-libwinpr-devel package contains libraries and header files for
 developing applications that use %{name}-libwinpr.
 
 %prep
-%autosetup -p1 -n FreeRDP-%{version}
+%autosetup -n %{version}
 
 # Rpmlint fixes
 find . -name "*.h" -exec chmod 664 {} \;
