@@ -76,6 +76,8 @@ BuildRequires:  pkgconfig(libavcodec) >= 57.48.101
 BuildRequires:  pkgconfig(libavutil)
 }
 
+BuildRequires:  pkgconfig(pkcs11-helper)
+
 Provides:       xfreerdp = %{?epoch}:%{version}~%{prerel}-%{release}
 Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
