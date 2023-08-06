@@ -76,9 +76,9 @@ BuildRequires:  pkgconfig(libavcodec) >= 57.48.101
 BuildRequires:  pkgconfig(libavutil)
 }
 
-Provides:       xfreerdp = %{?epoch}:%{version}-%{prerel}-%{release}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
+Provides:       xfreerdp = %{?epoch}:%{version}~%{prerel}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 
 %description
 The xfreerdp & wlfreerdp Remote Desktop Protocol (RDP) clients from the FreeRDP
@@ -89,9 +89,9 @@ machines, xrdp and VirtualBox.
 
 %package        libs
 Summary:        Core libraries implementing the RDP protocol
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 Obsoletes:      %{name}-plugins < 1:1.1.0
-Provides:       %{name}-plugins = %{?epoch}:%{version}-%{prerel}-%{release}
+Provides:       %{name}-plugins = %{?epoch}:%{version}~%{prerel}-%{release}
 %description    libs
 libfreerdp-core can be embedded in applications.
 
@@ -102,7 +102,7 @@ libfreerdp-core can be extended with plugins handling RDP channels.
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 Requires:       pkgconfig
 Requires:       cmake >= 2.8
 
@@ -113,8 +113,8 @@ applications that use %{name}-libs.
 %{?_with_server:
 %package        server
 Summary:        Server support for %{name}
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 
 %description    server
 The %{name}-server package contains servers which can export a desktop via
@@ -123,7 +123,7 @@ the RDP protocol.
 
 %package -n     libwinpr
 Summary:        Windows Portable Runtime
-Provides:       %{name}-libwinpr = %{?epoch}:%{version}-%{prerel}-%{release}
+Provides:       %{name}-libwinpr = %{?epoch}:%{version}~%{prerel}-%{release}
 Obsoletes:      %{name}-libwinpr < 1:1.2.0
 
 %description -n libwinpr
@@ -133,7 +133,7 @@ the equivalent WinPR implementation, without having to modify the code using it.
 
 %package -n     libwinpr-devel
 Summary:        Windows Portable Runtime development files
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{prerel}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
 Requires:       pkgconfig
 Requires:       cmake >= 2.8
 
