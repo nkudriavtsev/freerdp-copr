@@ -78,6 +78,7 @@ BuildRequires:  pkgconfig(libavutil)
 
 BuildRequires:  pkcs11-helper-devel
 BuildRequires:  libswscale-free-devel
+BuildRequires:  fuse3-devel
 
 Provides:       xfreerdp = %{?epoch}:%{version}~%{prerel}-%{release}
 Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}~%{prerel}-%{release}
