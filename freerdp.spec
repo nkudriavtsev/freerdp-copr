@@ -225,6 +225,8 @@ find %{buildroot} -name "*.a" -delete
 %{_bindir}/winpr-makecert
 %{_bindir}/wlfreerdp
 %{_bindir}/xfreerdp
+%{_bindir}/sfreerdp
+%{_bindir}/sfreerdp-server
 %{_mandir}/man1/winpr-hash.1*
 %{_mandir}/man1/winpr-makecert.1*
 %{_mandir}/man1/wlfreerdp.1*
@@ -239,36 +241,45 @@ find %{buildroot} -name "*.a" -delete
 %{_libdir}/libfreerdp-server3.so.*
 %{_libdir}/libfreerdp-shadow3.so.*
 %{_libdir}/libfreerdp-shadow-subsystem3.so.*
+%{_libdir}/libfreerdp-server-proxy3.so.*
 }
 %{_libdir}/libfreerdp3.so.*
 %{_libdir}/libuwac0.so.*
+%{_libdir}/librdtk0.so.*
 %{_mandir}/man7/wlog.*
 
 %files devel
 %{_includedir}/freerdp3
 %{_includedir}/uwac0
+%{_includedir}/rdtk0
 %{_libdir}/cmake/FreeRDP3
 %{_libdir}/cmake/FreeRDP-Client3
 %{?_with_server:
 %{_libdir}/cmake/FreeRDP-Server3
 %{_libdir}/cmake/FreeRDP-Shadow3
+%{_libdir}/cmake/FreeRDP-Proxy3
 }
 %{_libdir}/cmake/uwac0
+%{_libdir}/cmake/rdtk0
 %{_libdir}/libfreerdp-client3.so
 %{?_with_server:
 %{_libdir}/libfreerdp-server3.so
 %{_libdir}/libfreerdp-shadow3.so
 %{_libdir}/libfreerdp-shadow-subsystem3.so
+%{_libdir}/libfreerdp-server-proxy3.so.*
 }
 %{_libdir}/libfreerdp3.so
 %{_libdir}/libuwac0.so
+%{_libdir}/librdtk0.so.*
 %{_libdir}/pkgconfig/freerdp3.pc
 %{_libdir}/pkgconfig/freerdp-client3.pc
 %{?_with_server:
 %{_libdir}/pkgconfig/freerdp-server3.pc
 %{_libdir}/pkgconfig/freerdp-shadow3.pc
+%{_libdir}/pkgconfig/freerdp-server-proxy3.pc
 }
 %{_libdir}/pkgconfig/uwac0.pc
+%{_libdir}/pkgconfig/rdtk0.pc
 
 %{?_with_server:
 %files server
