@@ -218,7 +218,7 @@ find . -name "*.c" -exec chmod 664 {} \;
 
 find %{buildroot} -name "*.a" -delete
 
-%multilib_fix_c_header --file %{_includedir}/freerdp2/freerdp/build-config.h
+%multilib_fix_c_header --file %{_includedir}/freerdp3/freerdp/build-config.h
 
 %files
 %{_bindir}/winpr-hash
