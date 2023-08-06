@@ -233,7 +233,7 @@ find %{buildroot} -name "*.a" -delete
 %files libs
 %license LICENSE
 %doc README.md ChangeLog
-%{_libdir}/freerdp2/
+%{_libdir}/freerdp3/
 %{_libdir}/libfreerdp-client3.so.*
 %{?_with_server:
 %{_libdir}/libfreerdp-server3.so.*
