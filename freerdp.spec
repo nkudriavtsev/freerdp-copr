@@ -234,39 +234,39 @@ find %{buildroot} -name "*.a" -delete
 %license LICENSE
 %doc README.md ChangeLog
 %{_libdir}/freerdp2/
-%{_libdir}/libfreerdp-client2.so.*
+%{_libdir}/libfreerdp-client3.so.*
 %{?_with_server:
-%{_libdir}/libfreerdp-server2.so.*
-%{_libdir}/libfreerdp-shadow2.so.*
-%{_libdir}/libfreerdp-shadow-subsystem2.so.*
+%{_libdir}/libfreerdp-server3.so.*
+%{_libdir}/libfreerdp-shadow3.so.*
+%{_libdir}/libfreerdp-shadow-subsystem3.so.*
 }
-%{_libdir}/libfreerdp2.so.*
+%{_libdir}/libfreerdp3.so.*
 %{_libdir}/libuwac0.so.*
 %{_mandir}/man7/wlog.*
 
 %files devel
-%{_includedir}/freerdp2
+%{_includedir}/freerdp3
 %{_includedir}/uwac0
-%{_libdir}/cmake/FreeRDP2
-%{_libdir}/cmake/FreeRDP-Client2
+%{_libdir}/cmake/FreeRDP3
+%{_libdir}/cmake/FreeRDP-Client3
 %{?_with_server:
-%{_libdir}/cmake/FreeRDP-Server2
-%{_libdir}/cmake/FreeRDP-Shadow2
+%{_libdir}/cmake/FreeRDP-Server3
+%{_libdir}/cmake/FreeRDP-Shadow3
 }
 %{_libdir}/cmake/uwac0
-%{_libdir}/libfreerdp-client2.so
+%{_libdir}/libfreerdp-client3.so
 %{?_with_server:
-%{_libdir}/libfreerdp-server2.so
-%{_libdir}/libfreerdp-shadow2.so
-%{_libdir}/libfreerdp-shadow-subsystem2.so
+%{_libdir}/libfreerdp-server3.so
+%{_libdir}/libfreerdp-shadow3.so
+%{_libdir}/libfreerdp-shadow-subsystem3.so
 }
-%{_libdir}/libfreerdp2.so
+%{_libdir}/libfreerdp3.so
 %{_libdir}/libuwac0.so
-%{_libdir}/pkgconfig/freerdp2.pc
-%{_libdir}/pkgconfig/freerdp-client2.pc
+%{_libdir}/pkgconfig/freerdp3.pc
+%{_libdir}/pkgconfig/freerdp-client3.pc
 %{?_with_server:
-%{_libdir}/pkgconfig/freerdp-server2.pc
-%{_libdir}/pkgconfig/freerdp-shadow2.pc
+%{_libdir}/pkgconfig/freerdp-server3.pc
+%{_libdir}/pkgconfig/freerdp-shadow3.pc
 }
 %{_libdir}/pkgconfig/uwac0.pc
 
@@ -280,16 +280,16 @@ find %{buildroot} -name "*.a" -delete
 %files -n libwinpr
 %license LICENSE
 %doc README.md ChangeLog
-%{_libdir}/libwinpr2.so.*
-%{_libdir}/libwinpr-tools2.so.*
+%{_libdir}/libwinpr3.so.*
+%{_libdir}/libwinpr-tools3.so.*
 
 %files -n libwinpr-devel
-%{_libdir}/cmake/WinPR2
-%{_includedir}/winpr2
-%{_libdir}/libwinpr2.so
-%{_libdir}/libwinpr-tools2.so
-%{_libdir}/pkgconfig/winpr2.pc
-%{_libdir}/pkgconfig/winpr-tools2.pc
+%{_libdir}/cmake/WinPR3
+%{_includedir}/winpr3
+%{_libdir}/libwinpr3.so
+%{_libdir}/libwinpr-tools3.so
+%{_libdir}/pkgconfig/winpr3.pc
+%{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
 * Sun Aug 6 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 2:3.0.0-beta2-1
