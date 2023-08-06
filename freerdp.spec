@@ -266,11 +266,11 @@ find %{buildroot} -name "*.a" -delete
 %{_libdir}/libfreerdp-server3.so
 %{_libdir}/libfreerdp-shadow3.so
 %{_libdir}/libfreerdp-shadow-subsystem3.so
-%{_libdir}/libfreerdp-server-proxy3.so.*
+%{_libdir}/libfreerdp-server-proxy3.so
 }
 %{_libdir}/libfreerdp3.so
 %{_libdir}/libuwac0.so
-%{_libdir}/librdtk0.so.*
+%{_libdir}/librdtk0.so
 %{_libdir}/pkgconfig/freerdp3.pc
 %{_libdir}/pkgconfig/freerdp-client3.pc
 %{?_with_server:
