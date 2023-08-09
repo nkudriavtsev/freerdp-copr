@@ -219,14 +219,14 @@ find . -name "*.c" -exec chmod 664 {} \;
 find %{buildroot} -name "*.a" -delete
 
 for f in winpr-hash winpr-makecert wlfreerdp xfreerdp sfreerdp sfreerdp-server; do
-    mv %{_bindir}/$f %{_bindir}/${f}3
+    mv %{buildroot}/%{_bindir}/$f %{buildroot}/%{_bindir}/${f}3
 done
 
 for f in winpr-hash winpr-makecert wlfreerdp xfreerdp; do
-    mv %{_mandir}/$f.1.gz %{_mandir}/${f}3.1.gz
+    mv %{buildroot}/%{_mandir}/$f.1.gz %{buildroot}/%{_mandir}/${f}3.1.gz
 done
 
-mv %{_mandir}/man7/wlog.7.gz %{_mandir}/man7/wlog3.7.gz
+mv %{buildroot}/%{_mandir}/man7/wlog.7.gz %{buildroot}/%{_mandir}/man7/wlog3.7.gz
 
 %multilib_fix_c_header --file %{_includedir}/freerdp3/freerdp/build-config.h
 
