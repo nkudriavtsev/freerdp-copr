@@ -313,6 +313,11 @@ mv %{_mandir}/man7/wlog.7.gz %{_mandir}/man7/wlog3.7.gz
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Wed Aug 9 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta2-1
+- Change epoch to 3
+- Rename package and execution files to freerdp3 to prevent conflict with v2
+  (not so with devel packages)
+
 * Sun Aug 6 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 2:3.0.0-beta2-1
 - Update to 3.0.0-beta2
 - Remove the patch included in version 3.0.0
