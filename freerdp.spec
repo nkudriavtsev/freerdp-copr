@@ -223,10 +223,10 @@ for f in winpr-hash winpr-makecert wlfreerdp xfreerdp sfreerdp sfreerdp-server; 
 done
 
 for f in winpr-hash winpr-makecert wlfreerdp xfreerdp; do
-    mv %{buildroot}%{_mandir}/man1/$f.1.gz %{buildroot}%{_mandir}/man1/${f}3.1.gz
+    mv %{buildroot}%{_mandir}/man1/$f.1 %{buildroot}%{_mandir}/man1/${f}3.1
 done
 
-mv %{buildroot}%{_mandir}/man7/wlog.7.gz %{buildroot}%{_mandir}/man7/wlog3.7.gz
+mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 
 %multilib_fix_c_header --file %{_includedir}/freerdp3/freerdp/build-config.h
 
