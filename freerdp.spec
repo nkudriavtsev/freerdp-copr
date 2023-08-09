@@ -228,6 +228,9 @@ done
 
 mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 
+# this is an incorrect renaming, only to avoid packages' conflict
+mv %{buildroot}%{_libdir}/libuwac0.so.0 %{buildroot}%{_libdir}/libuwac0.so.0.2
+
 %multilib_fix_c_header --file %{_includedir}/freerdp3/freerdp/build-config.h
 
 %files
