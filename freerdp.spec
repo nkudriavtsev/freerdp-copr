@@ -81,9 +81,9 @@ BuildRequires:  libswscale-free-devel
 BuildRequires:  fuse3-devel
 BuildRequires:  cjson-devel
 
-Provides:       xfreerdp = %{?epoch}:%{version}-%{release}
+Provides:       xfreerdp3 = %{?epoch}:%{version}-%{release}
 Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{release}
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}-%{release}
 
 %description
 The xfreerdp & wlfreerdp Remote Desktop Protocol (RDP) clients from the FreeRDP
@@ -94,7 +94,7 @@ machines, xrdp and VirtualBox.
 
 %package        libs
 Summary:        Core libraries implementing the RDP protocol
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}-%{release}
 Obsoletes:      %{name}-plugins < 1:1.1.0
 Provides:       %{name}-plugins = %{?epoch}:%{version}-%{release}
 %description    libs
@@ -126,23 +126,23 @@ The %{name}-server package contains servers which can export a desktop via
 the RDP protocol.
 }
 
-%package -n     libwinpr
+%package -n     libwinpr3
 Summary:        Windows Portable Runtime
 Provides:       %{name}-libwinpr = %{?epoch}:%{version}-%{release}
 Obsoletes:      %{name}-libwinpr < 1:1.2.0
 
-%description -n libwinpr
+%description -n libwinpr3
 WinPR provides API compatibility for applications targeting non-Windows
 environments. When on Windows, the original native API is being used instead of
 the equivalent WinPR implementation, without having to modify the code using it.
 
-%package -n     libwinpr-devel
+%package -n     libwinpr3-devel
 Summary:        Windows Portable Runtime development files
 Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{release}
 Requires:       pkgconfig
 Requires:       cmake >= 2.8
 
-%description -n libwinpr-devel
+%description -n libwinpr3-devel
 The %{name}-libwinpr-devel package contains libraries and header files for
 developing applications that use %{name}-libwinpr.
 
@@ -218,19 +218,29 @@ find . -name "*.c" -exec chmod 664 {} \;
 
 find %{buildroot} -name "*.a" -delete
 
+for f in winpr-hash winpr-makecert wlfreerdp xfreerdp sfreerdp sfreerdp-server; do
+    mv %{bindir}/$f %{bindir}/${f}3
+done
+
+for f in winpr-hash winpr-makecert wlfreerdp xfreerdp; do
+    mv %{mandir}/$f.1.gz %{mandir}/${f}3.1.gz
+done
+
+mv %{_mandir}/man7/wlog.7.gz %{_mandir}/man7/wlog3.7.gz
+
 %multilib_fix_c_header --file %{_includedir}/freerdp3/freerdp/build-config.h
 
 %files
-%{_bindir}/winpr-hash
-%{_bindir}/winpr-makecert
-%{_bindir}/wlfreerdp
-%{_bindir}/xfreerdp
-%{_bindir}/sfreerdp
-%{_bindir}/sfreerdp-server
-%{_mandir}/man1/winpr-hash.1*
-%{_mandir}/man1/winpr-makecert.1*
-%{_mandir}/man1/wlfreerdp.1*
-%{_mandir}/man1/xfreerdp.1*
+%{_bindir}/winpr-hash3
+%{_bindir}/winpr-makecert3
+%{_bindir}/wlfreerdp3
+%{_bindir}/xfreerdp3
+%{_bindir}/sfreerdp3
+%{_bindir}/sfreerdp-server3
+%{_mandir}/man1/winpr-hash3.1*
+%{_mandir}/man1/winpr-makecert3.1*
+%{_mandir}/man1/wlfreerdp3.1*
+%{_mandir}/man1/xfreerdp3.1*
 
 %files libs
 %license LICENSE
@@ -246,7 +256,7 @@ find %{buildroot} -name "*.a" -delete
 %{_libdir}/libfreerdp3.so.*
 %{_libdir}/libuwac0.so.*
 %{_libdir}/librdtk0.so.*
-%{_mandir}/man7/wlog.*
+%{_mandir}/man7/wlog3.*
 
 %files devel
 %{_includedir}/freerdp3
@@ -288,13 +298,13 @@ find %{buildroot} -name "*.a" -delete
 %{_mandir}/man1/freerdp-shadow-cli.1*
 }
 
-%files -n libwinpr
+%files -n libwinpr3
 %license LICENSE
 %doc README.md ChangeLog
 %{_libdir}/libwinpr3.so.*
 %{_libdir}/libwinpr-tools3.so.*
 
-%files -n libwinpr-devel
+%files -n libwinpr3-devel
 %{_libdir}/cmake/WinPR3
 %{_includedir}/winpr3
 %{_libdir}/libwinpr3.so
