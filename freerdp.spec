@@ -23,10 +23,10 @@
 %endif
 
 %global prerel  beta2
-Name:           freerdp
+Name:           freerdp3
 Version:        3.0.0
 Release:        %{prerel}%{?dist}
-Epoch:          2
+Epoch:          3
 Summary:        Free implementation of the Remote Desktop Protocol (RDP)
 License:        ASL 2.0
 URL:            http://www.freerdp.com/
