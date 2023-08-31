@@ -22,7 +22,7 @@
 %global _with_ffmpeg 1
 %endif
 
-%global prerel  beta2
+%global prerel  beta3
 Name:           freerdp3
 Version:        3.0.0
 Release:        %{prerel}%{?dist}
@@ -314,6 +314,9 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Thu Aug 31 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta3-1
+- Update to 3.0.0-beta3
+
 * Wed Aug 9 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta2-1
 - Change epoch to 3
 - Rename package and execution files to freerdp3 to prevent conflict with v2
