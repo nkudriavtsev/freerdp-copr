@@ -22,7 +22,7 @@
 %global _with_ffmpeg 1
 %endif
 
-%global prerel  beta3
+%global prerel  beta3-2
 Name:           freerdp3
 Version:        3.0.0
 Release:        %{prerel}%{?dist}
@@ -254,7 +254,7 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/libfreerdp-server-proxy3.so.*
 }
 %{_libdir}/libfreerdp3.so.*
-%{_libdir}/libuwac0.so.0.2.0
+%ghost %{_libdir}/libuwac0.so.0.2.0
 %ghost %{_libdir}/libuwac0.so.0
 %{_libdir}/librdtk0.so.*
 %{_mandir}/man7/wlog3.*
@@ -314,6 +314,9 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Wed Sep 13 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta3-2
+- Remove libuwac0.so.0.2.0 from the package because freeedp 2.11.1 has that library
+
 * Thu Aug 31 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta3-1
 - Update to 3.0.0-beta3
 
