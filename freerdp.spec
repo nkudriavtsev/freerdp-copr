@@ -22,16 +22,17 @@
 %global _with_ffmpeg 1
 %endif
 
-%global prerel  beta3-2
+%global prerel  beta3
+%global basever 3.0.0
 Name:           freerdp3
-Version:        3.0.0
-Release:        %{prerel}%{?dist}
+Version:        %{basever}.%{prerel}
+Release:        2%{?dist}
 Epoch:          3
 Summary:        Free implementation of the Remote Desktop Protocol (RDP)
 License:        ASL 2.0
 URL:            http://www.freerdp.com/
 
-Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{version}-%{prerel}.tar.gz
+Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{basever}-%{prerel}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -81,9 +82,9 @@ BuildRequires:  libswscale-free-devel
 BuildRequires:  fuse3-devel
 BuildRequires:  cjson-devel
 
-Provides:       xfreerdp3 = %{?epoch}:%{version}-%{release}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{release}
-Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}-%{release}
+Provides:       xfreerdp3 = %{?epoch}:%{version}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}
+Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}
 
 %description
 The xfreerdp & wlfreerdp Remote Desktop Protocol (RDP) clients from the FreeRDP
@@ -94,9 +95,9 @@ machines, xrdp and VirtualBox.
 
 %package        libs
 Summary:        Core libraries implementing the RDP protocol
-Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       libwinpr3%{?_isa} = %{?epoch}:%{version}
 Obsoletes:      %{name}-plugins < 1:1.1.0
-Provides:       %{name}-plugins = %{?epoch}:%{version}-%{release}
+Provides:       %{name}-plugins = %{?epoch}:%{version}
 %description    libs
 libfreerdp-core can be embedded in applications.
 
@@ -107,7 +108,7 @@ libfreerdp-core can be extended with plugins handling RDP channels.
 
 %package        devel
 Summary:        Development files for %{name}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}
 Requires:       pkgconfig
 Requires:       cmake >= 2.8
 
@@ -118,8 +119,8 @@ applications that use %{name}-libs.
 %{?_with_server:
 %package        server
 Summary:        Server support for %{name}
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{release}
-Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}
+Requires:       %{name}-libs%{?_isa} = %{?epoch}:%{version}
 
 %description    server
 The %{name}-server package contains servers which can export a desktop via
@@ -128,7 +129,7 @@ the RDP protocol.
 
 %package -n     libwinpr3
 Summary:        Windows Portable Runtime
-Provides:       %{name}-libwinpr = %{?epoch}:%{version}-%{release}
+Provides:       %{name}-libwinpr = %{?epoch}:%{version}
 Obsoletes:      %{name}-libwinpr < 1:1.2.0
 
 %description -n libwinpr3
@@ -138,7 +139,7 @@ the equivalent WinPR implementation, without having to modify the code using it.
 
 %package -n     libwinpr3-devel
 Summary:        Windows Portable Runtime development files
-Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}-%{release}
+Requires:       libwinpr%{?_isa} = %{?epoch}:%{version}
 Requires:       pkgconfig
 Requires:       cmake >= 2.8
 
@@ -147,7 +148,7 @@ The %{name}-libwinpr-devel package contains libraries and header files for
 developing applications that use %{name}-libwinpr.
 
 %prep
-%autosetup -n FreeRDP-%{version}-%{prerel}
+%autosetup -n FreeRDP-%{basever}-%{prerel}
 
 # Rpmlint fixes
 find . -name "*.h" -exec chmod 664 {} \;
@@ -314,8 +315,9 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
-* Wed Sep 13 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta3-2
+* Wed Sep 13 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.beta3-2
 - Remove libuwac0.so.0.2.0 from the package because freeedp 2.11.1 has that library
+- Change package versioning 
 
 * Thu Aug 31 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-beta3-1
 - Update to 3.0.0-beta3
