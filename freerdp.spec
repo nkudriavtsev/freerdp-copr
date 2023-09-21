@@ -22,11 +22,11 @@
 %global _with_ffmpeg 1
 %endif
 
-%global prerel  beta3
+%global prerel  beta4
 %global basever 3.0.0
 Name:           freerdp3
 Version:        %{basever}.%{prerel}
-Release:        2%{?dist}
+Release:        1%{?dist}
 Epoch:          3
 Summary:        Free implementation of the Remote Desktop Protocol (RDP)
 License:        ASL 2.0
@@ -315,6 +315,8 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Thu Sep 21 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.beta4-1
+
 * Wed Sep 13 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.beta3-2
 - Remove libuwac0.so.0.2.0 from the package because freeedp 2.11.1 has that library
 - Change package versioning 
