@@ -308,6 +308,7 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 
 %files -n libwinpr3-devel
 %{_libdir}/cmake/WinPR3
+%{_libdir}/cmake/WinPR-tools3
 %{_includedir}/winpr3
 %{_libdir}/libwinpr3.so
 %{_libdir}/libwinpr-tools3.so
