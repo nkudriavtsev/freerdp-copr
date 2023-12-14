@@ -22,17 +22,16 @@
 %global _with_ffmpeg 1
 %endif
 
-%global prerel  rc0
 %global basever 3.0.0
 Name:           freerdp3
-Version:        %{basever}.%{prerel}
+Version:        %{basever}
 Release:        1%{?dist}
 Epoch:          3
 Summary:        Free implementation of the Remote Desktop Protocol (RDP)
 License:        ASL 2.0
 URL:            http://www.freerdp.com/
 
-Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{basever}-%{prerel}.tar.gz
+Source0:        https://github.com/FreeRDP/FreeRDP/archive/refs/tags/%{basever}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -316,6 +315,9 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Thu Dec 15 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-1
+- Update to 3.0.0
+
 * Mon Nov 27 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.rc0-1
 
 * Thu Sep 21 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.beta4-1
