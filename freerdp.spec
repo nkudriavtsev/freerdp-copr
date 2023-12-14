@@ -315,7 +315,7 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
-* Thu Dec 15 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-1
+* Thu Dec 14 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0-1
 - Update to 3.0.0
 
 * Mon Nov 27 2023 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.0.0.rc0-1
