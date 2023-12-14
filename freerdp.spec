@@ -147,7 +147,7 @@ The %{name}-libwinpr-devel package contains libraries and header files for
 developing applications that use %{name}-libwinpr.
 
 %prep
-%autosetup -n FreeRDP-%{basever}-%{prerel}
+%autosetup -n FreeRDP-%{basever}
 
 # Rpmlint fixes
 find . -name "*.h" -exec chmod 664 {} \;
