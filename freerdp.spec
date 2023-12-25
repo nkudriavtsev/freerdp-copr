@@ -297,6 +297,7 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_bindir}/freerdp-proxy
 %{_bindir}/freerdp-shadow-cli
 %{_mandir}/man1/freerdp-shadow-cli.1*
+%{_mandir}/man1/freerdp-proxy.1*
 }
 
 %files -n libwinpr3
