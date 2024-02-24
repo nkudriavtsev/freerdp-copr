@@ -22,7 +22,7 @@
 %global _with_ffmpeg 1
 %endif
 
-%global basever 3.2.0
+%global basever 3.3.0
 Name:           freerdp3
 Version:        %{basever}
 Release:        1%{?dist}
@@ -316,6 +316,9 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_libdir}/pkgconfig/winpr-tools3.pc
 
 %changelog
+* Sat Feb 24 2024 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.3.0-1
+- Update to 3.3.0
+
 * Fri Jan 19 2024 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 3:3.2.0-1
 - Update to 3.2.0
 
