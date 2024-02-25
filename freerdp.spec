@@ -241,7 +241,7 @@ mv %{buildroot}%{_mandir}/man7/wlog.7 %{buildroot}%{_mandir}/man7/wlog3.7
 %{_mandir}/man1/winpr-makecert3.1*
 %{_mandir}/man1/wlfreerdp3.1*
 %{_mandir}/man1/xfreerdp3.1*
-%gost %{_datadir}/FreeRDP/images/test_icon.*
+%ghost %{_datadir}/FreeRDP/images/test_icon.*
 
 %files libs
 %license LICENSE
